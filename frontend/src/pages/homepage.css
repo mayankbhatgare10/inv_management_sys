@@ -1,0 +1,316 @@
+.homepage {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .toolbar {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .search-container {
+    position: relative;
+    flex: 1;
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted-foreground);
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 0.75rem 2.5rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background-color: var(--background);
+    font-size: 0.875rem;
+  }
+  
+  .search-input:focus {
+    outline: none;
+    border-color: var(--ring);
+    box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.1);
+  }
+  
+  .clear-search {
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--muted-foreground);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem;
+  }
+  
+  .toolbar-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .action-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    background-color: var(--background);
+    border: 1px solid var(--border);
+    color: var(--foreground);
+    font-weight: 500;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+  }
+  
+  .action-button:hover {
+    background-color: var(--muted);
+    border-color: var(--muted-foreground);
+  }
+  
+  .active-filters {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    padding: 0.5rem 0;
+    font-size: 0.875rem;
+  }
+  
+  .filter-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    background-color: var(--muted);
+    border-radius: var(--radius);
+    font-size: 0.75rem;
+  }
+  
+  .reset-filters {
+    margin-left: auto;
+    background: none;
+    border: none;
+    color: var(--primary);
+    font-size: 0.75rem;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  .products-container {
+    background-color: var(--background);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+  
+  .products-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .products-table th,
+  .products-table td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .products-table th {
+    font-weight: 500;
+    color: var(--muted-foreground);
+    font-size: 0.875rem;
+    background-color: var(--muted);
+  }
+  
+  .products-table tr:last-child td {
+    border-bottom: none;
+  }
+  
+  .table-actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .edit-button,
+  .delete-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: var(--radius);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .edit-button {
+    background-color: var(--muted);
+    color: var(--foreground);
+  }
+  
+  .delete-button {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+  }
+  
+  .edit-button:hover {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+  }
+  
+  .delete-button:hover {
+    background-color: #ef4444;
+    color: white;
+  }
+  
+  .no-products {
+    padding: 2rem;
+    text-align: center;
+    color: var(--muted-foreground);
+  }
+  
+  .modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .modal {
+    background-color: var(--background);
+    border-radius: var(--radius);
+    width: 100%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .modal-header h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  
+  .close-button {
+    background: none;
+    border: none;
+    color: var(--muted-foreground);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-body {
+    padding: 1.5rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background-color: var(--background);
+    font-size: 0.875rem;
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus {
+    outline: none;
+    border-color: var(--ring);
+    box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.1);
+  }
+  
+  .modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+  
+  .cancel-button {
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    background-color: var(--muted);
+    color: var(--foreground);
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .confirm-button {
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .sort-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .sort-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .sort-option input[type="radio"] {
+    width: auto;
+  }
+  
+  @media (min-width: 640px) {
+    .toolbar {
+      flex-direction: row;
+      align-items: center;
+    }
+    
+    .toolbar-actions {
+      flex-wrap: nowrap;
+    }
+  }
+  
